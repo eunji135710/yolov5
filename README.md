@@ -2,45 +2,34 @@
 
 ---
 
-## 주제: YOLOv5를 이용한 화재 진압용 소화기 인식 시스템
-
 ## Title: Fire Extinguisher Detection System Using YOLOv5
 
 ---
 
-## **Overview of the Project (프로젝트 개요)**
+## **Overview of the Project**
 
-### **Background Information (배경 정보 소개):**
+### **Background Information**
 
 Fire is one of the major disasters that threaten lives and property, where early suppression plays a crucial role. Technology that quickly identifies the location of fire extinguishers, which are essential for initial firefighting efforts, is indispensable in emergencies. By utilizing deep learning-based object detection technology to detect fire extinguishers in real-time, the speed of initial response can be significantly improved.
 
-화재는 생명과 재산을 위협하는 주요 재난 중 하나로, 초기 진압이 중요한 역할을 합니다. 초기 진화에 필요한 소화기의 위치를 신속히 인식하는 기술은 긴급 상황에서 필수적입니다. 딥러닝 기반의 객체 탐지 기술을 활용해 소화기의 위치를 실시간으로 감지하면 초기 대응 속도를 획기적으로 향상시킬 수 있습니다.
-
 ---
 
-### **General Description of the Project (프로젝트의 전반적인 설명):**
+### **General Description of the Project:**
 
 This project focuses on building a system using YOLOv5 to detect fire extinguishers for firefighting in real-time. The system is trained on a dataset comprising various designs, colors, and sizes of fire extinguishers to ensure it functions accurately in diverse environments.
 
-이 프로젝트는 YOLOv5를 활용하여 화재 진압용 소화기를 실시간으로 감지하는 시스템을 구축하는 데 초점을 맞춥니다. 소화기의 다양한 디자인, 색상 및 크기를 학습 데이터로 사용하여 시스템이 다양한 환경에서도 정확히 작동하도록 합니다.
-
 ---
 
-### **Proposed Enhancements (제안하고 싶은 프로젝트의 강점):**
+### **Proposed Enhancements**
 
-1. **High Accuracy and Real-Time Processing (높은 정확도와 실시간 처리):**
+1. **High Accuracy and Real-Time Processing:**
     
     Utilizing YOLOv5’s fast processing speed and accuracy to detect fire extinguishers in real-time.
     
-    YOLOv5의 빠른 처리 속도와 정확도를 활용하여 실시간으로 소화기를 탐지.
-    
-2. **Reliability Across Diverse Environments (다양한 환경에서의 신뢰성):**
+2. **Reliability Across Diverse Environments:**
     
     Ensures detection even under varying lighting conditions and complex backgrounds.
     
-    다양한 조명 조건과 배경 환경에서도 소화기를 인식 가능.
-    
-
 ---
 
 ### **Value and Significance (프로젝트의 가치와 중요성):**
