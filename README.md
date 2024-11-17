@@ -504,14 +504,12 @@ Since displaying detected objects in video format makes the results easier to in
 The following is an object detection video.
 
 
-https://github.com/user-attachments/assets/2590909d-96f8-4561-8ebc-49480c3e8fda
 
+[fire_extinguisher](https://drive.google.com/file/d/1VbC3X7ltAjyHlrBjZde7CQPUnOW5zrzU/view?usp=sharing)
 
-https://github.com/user-attachments/assets/146ac0f7-1284-47e6-a96e-a896ae98c04a
+[fire_extinguisher](https://drive.google.com/file/d/1CwUU4oGnFAEVUgphv-0tSmXerRCFnEwj/view?usp=sharing)
 
+[fire_extinguisher](https://drive.google.com/file/d/1inJ4fTo5wrxKBm8XoNx9FZzQ8ap6CCzL/view?usp=sharing)
 
-https://github.com/user-attachments/assets/9919bef1-3ad6-4821-a787-4add6d5ba6fa
-
-
-https://github.com/user-attachments/assets/fd48c9b2-57d4-41c4-9066-881bd85bf717
+[fire_extinguisher](https://drive.google.com/file/d/1I6X9XHSepEmPcWnV8GepaScHFwF8B_Uq/view?usp=sharing)
 
