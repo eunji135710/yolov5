@@ -32,65 +32,49 @@ This project focuses on building a system using YOLOv5 to detect fire extinguish
     
 ---
 
-### **Value and Significance (프로젝트의 가치와 중요성):**
+### **Value and Significance:**
 
 By swiftly detecting fire extinguishers, this system reduces fire response times, enhances safety, and minimizes casualties. It can serve as a crucial component in smart building and fire management systems.
 
-소화기를 신속히 탐지함으로써 화재 초기 대응 시간을 줄이고, 안전성을 높이며, 인명 피해를 최소화할 수 있습니다. 이는 스마트 건물 및 화재 관리 시스템의 필수적인 요소가 될 수 있습니다.
-
 ---
 
-### **Current Limitations (직면하고 있는 한계):**
+### **Current Limitations:**
 
 1. Detection performance may decrease in environments with complex backgrounds or objects with similar colors.
 
-     복잡한 배경과 비슷한 색상의 객체가 있는 환경에서 탐지 성능이 저하될 수 있음.
-
-1. The system requires differentiation between various fire extinguisher designs and objects of similar size.
-
-      다양한 소화기 디자인 및 비슷한 크기의 다른 물체와의 구분 필요.
+2. The system requires differentiation between various fire extinguisher designs and objects of similar size.
 
 ---
 
-## **Data Acquisition and Annotation (학습 데이터 취득 및 어노테이션)**
+## **Data Acquisition and Annotation**
 
-### **1. Data Source (데이터 소스):**
+### **1. Data Source:**
 
 Real-world videos capturing fire extinguishers.
 
-실제 환경에서 소화기를 촬영한 영상.
-
-### **2. Annotation Tool (어노테이션 도구):**
+### **2. Annotation Tool:**
 
 DarkLabel was used to annotate images, defining the class "Fire_Extinguisher."
 
-DarkLabel을 사용하여 이미지에 라벨을 생성하고, "Fire_Extinguisher" 클래스를 정의.
-
-### **3. Data Preprocessing (학습 데이터 전처리):**
+### **3. Data Preprocessing:**
 
 Images were resized to 640x640 resolution and stored in YOLOv5-compatible format.
 
-이미지를 640x640 해상도로 변환한 후 YOLOv5에 맞는 형식으로 저장.
 
-### Fire Extinguisher Footage(소화기 촬영 영상)
+### Fire Extinguisher Footage
 
 https://drive.google.com/file/d/1ts0J0TlNZmtA-nHqVIVC46Pkr4WyJY9G/view?usp=sharing
 
 Videos capturing fire extinguishers in real-world environments
 
-실제 환경에서 직접 소화기를 촬영한 영상
 
-## **Learning Data Extraction and Learning Annotation(**학습 데이터 추출과 학습 어노테이션)
+## **Learning Data Extraction and Learning Annotation
 
-### **비디오 해상도 조정 (Video Resolution Adjustment)**
+### **Video Resolution Adjustment**
 
 To train YOLOv5 with 640-resolution images, we first converted the video into a 640 x 640 resolution video.
 
-YOLOv5에서 640 해상도 이미지로 학습하기 위해 먼저 영상을 640 x 640 해상도 영상으로 변환했다.
-
 DarkLabel, also known as a Video/Image Labeling and Annotation Tool, was used to convert the video into frame-by-frame images or to annotate images at 640 x 640 resolution.
-
-640 x 640 해상도로 변환된 영상을 프레임 단위로 이미지로 만들거나 어노테이션하기 위해 Video/Image Labeling and Annotation Tool로 잘 알려진 DarkLabel을 사용했다.
 
 ### DarkLabel
 
@@ -99,30 +83,20 @@ DarkLabel, also known as a Video/Image Labeling and Annotation Tool, was used to
 
 In the DarkLabel program, you can convert videos into frame-by-frame images. First, select a 640 x 640 resolution video through the "Open Video" option. Then, disable the "labeled frames only" checkbox, which is likely enabled by default.
 
-DarkLabel 프로그램에서 영상을 프레임 단위로 이미지로 변환할 수 있다. 먼저 Open Video를 통해 640 x 640 해상도 영상을 선택한다. 이후 labeled frames only가 체크 표시가 활성화 되어 있을텐데 체크 표시를 비활성화한다.
-
 First, add classes through **darklabel.yml** before proceeding with annotation.
-
-먼저 Annotation을 하기 전에 **darklabel.yml** 을 통해 classes를 추가한다.
 
 ![image (2)](https://github.com/user-attachments/assets/251f85cf-45e1-4b27-a860-fbf70e427ac7)
 
 In the YAML file, create `fire_classes` and add the class name `fire_extinguisher` .
 
-yaml 파일 안에 `fire_classes`를 만들고 class명은 `fire_extinguisher`(소화기)를 추가해준다.
-
 ![1](https://github.com/user-attachments/assets/3cd2613b-4ea9-4461-9a2f-8613b2c79fa9)
 
 Now, when annotating, you can view the predefined classes in the DarkLabel GUI. Set `classes_set` to the preconfigured `fire_classes` and assign `name` as `fire_extinguisher` in the GUI for display.
-
-이제 Annotation할 때 DarkLabel GUI에서 설정한 classes를 볼 수 있게 `classes_set`은 미리 설정해 놓은 `fire_classes`를 넣고 GUI에서 볼 `name`을 `fire_extinguisher`으로 설정한다.
 
 ![2](https://github.com/user-attachments/assets/db99ad5c-8d67-4094-857c-4d891158ab68)
 
 
 In the DarkLabel program, you can confirm that a class named 1) fire_classes has been added, and 2) fire_extinguisher has been included under it.
-
-DarkLabel 프로그램에 1) fire_classes이라는 classes가 추가되었고 밑에 2) fire_extinguisher이 추가된 것을 확인할 수 있다.
 
 ![3](https://github.com/user-attachments/assets/9d441e63-c219-4f72-a671-638283660e96)
 
@@ -130,15 +104,9 @@ In the DarkLabel program, you can convert videos into frame-by-frame images. Fir
 
 In DarkLabel, the video was imported using the "Open Video" option. As shown in the image below, annotations were made on fire extinguishers that match the specified class.
 
-DarkLabel 프로그램에서 영상을 프레임 단위로 이미지로 변환할 수 있다. 먼저 "labeled frames only"가 체크 표시가 활성화되어 있을 텐데 체크 표시를 비활성화한다. 이후 "3) Box + Label"로 선택 후 "4) Open Video"를 통해 640 x 640 해상도 영상을 선택한다.
-
-DarkLabel에서 "Open Video"를 통해 비디오를 불러왔다. 아래 사진과 같이 해당 class에 부합하는 소화기에 Annotation을 했다.
-
 ![5](https://github.com/user-attachments/assets/3d2ec888-2e50-4713-a7b9-1d131f5bdd92)
 
 After completing the annotation, a folder named labels was created using "GT Save As," and the annotations were saved inside it. It was confirmed that the labels folder contains the annotated .txt files.
-
-Annotation이 끝난 후 "GT Save As"를 통해 labels라는 폴더를 만들고 해당 폴더 안에 저장을 했다. labels 안에 Annotation한 .txt 파일이 있음을 확인할 수 있다.
 
 ![image (3)](https://github.com/user-attachments/assets/df1f5d50-429a-4a09-b85b-58eedea9e91a)
 
@@ -149,8 +117,6 @@ It was confirmed that the converted images are stored in the images
 
 folder.
 
-"as images"를 통해 images라는 폴더 안에 이미지로 변환한다. images 폴더 안에 변환된 이미지가 들어온 것을 확인할 수 있다.
-
 ![image (4)](https://github.com/user-attachments/assets/0b44b087-20e1-480e-8584-395ee2e38ada)
 
 ### images/labels folder
@@ -158,11 +124,8 @@ folder.
 [[link to the imeages folder](https://drive.google.com/drive/folders/1E0EIw-gQTHQSt2MFsC0XYWvkqy8c5qJ_?usp=sharing)]
 
 [[link to the labels folder](https://drive.google.com/drive/folders/1EDraSYkezzG0sySl99OFzbDGIMQ9dgbE?usp=drive_link)]
-## Training Process Using Google Colab(Google Colab을 활용한 학습 과정)
-
+## Training Process Using Google Colab
 In the Google Colab environment, connect Google Drive and, if necessary, unmount the existing drive before remounting it.
-
-Google Colab 환경에서 Google Drive를 연결하고 필요한 경우 기존 마운트를 해제한 후 다시 마운트하는 과정을 수행합니다.
 
 ```python
 # Google Drive 연결 및 마운트 설정
@@ -178,8 +141,6 @@ drive.mount('/content/drive')
 
 After changing the working directory to the MyDrive directory in Google Drive, the directory path is printed to confirm the change.
 
-Google Drive의 `MyDrive` 디렉토리로 작업 디렉토리를 변경한 뒤, 변경이 잘 되었는지 확인하기 위한 디렉토리 경로를 출력합니다.
-
 ```jsx
 # Google Drive의 특정 디렉토리로 이동
 %cd /content/drive/MyDrive
@@ -189,8 +150,6 @@ pwd
 ```
 
 To set up YOLOv5, download the code from GitHub and install the required libraries, including Pillow.
-
-YOLOv5 설정을 위해 GitHub에서 코드를 다운로드하고 필요한 라이브러리(Pillow 포함)를 설치합니다.
 
 ```jsx
 # 기존에 YOLOv5를 설치한 경우 해당 디렉토리로 이동
@@ -212,8 +171,6 @@ YOLOv5 설정을 위해 GitHub에서 코드를 다운로드하고 필요한 라�
 
 Create `labels` and `images` subfolders inside the Train and Val directories to prepare the structure for training and validation data.
 
-`Train`과 `Val` 디렉토리 안에 각각 `labels`와 `images` 하위 폴더를 생성하여 학습 및 검증 데이터 구조를 준비합니다.
-
 ```jsx
 # Train 데이터셋용 디렉토리 생성 (라벨과 이미지 저장)
 !mkdir -p Train/labels
@@ -225,11 +182,8 @@ Create `labels` and `images` subfolders inside the Train and Val directories to 
 ```
 
 Then, upload the `images` and `labels` saved from the DarkLabel program to the respective subfolders.
-이후 생성된 하위 폴더에 DarkLabel 프로그램에서 저장한 images와 labels를 각각 폴더에 업로드해준다.
 
 30% of the Train data is split and copied into the Val data, stored in the `Val/images` and `Val/labels` directories. After execution, the number of validation data is displayed.
-Train 데이터의 30%가 Val 데이터로 분리 및 복사되며, `Val/images`와 `Val/labels` 디렉토리에 저장됩니다. 실행 후 검증 데이터 개수가 출력됩니다.
-
 ```python
 # 필요한 라이브러리 임포트
 import os
@@ -286,8 +240,6 @@ create_validation_set(train_path, val_path)
 
 Use the following code to quickly check the status of the Train and Val datasets and ensure the data is properly prepared. This check helps easily identify cases where the dataset is not correctly split or files are missing.
 
-아래의 코드로 Train과 Val 데이터셋의 상태를 빠르게 확인하여 데이터가 올바르게 준비되었는지 점검합니다. 점검으로 데이터셋이 제대로 분리되지 않았거나 누락된 파일이 있을 경우 이를 쉽게 발견할 수 있습니다.
-
 ```jsx
 def check_dataset():
     """
@@ -317,8 +269,6 @@ check_dataset()
 
 Import the essential libraries required for setting up the YOLOv5 execution environment.
 
-YOLOv5 실행 환경 설정 시 필요한 기본 라이브러리를 불러옵니다.
-
 ```jsx
 # 필요한 라이브러리 임포트하기
 import torch  # PyTorch를 사용하여 딥러닝 모델을 실행하거나 학습에 활용
@@ -328,8 +278,6 @@ from IPython.display import Image, clear_output  # 이미지 출력 및 화면 �
 ```
 
 After running the code below, the number of processed image files and their paths will be displayed in the console.
-
-아래코드 실행이후 처리된 이미지 파일 개수와 경로가 콘솔에 출력됩니다.
 
 ```jsx
 # 필요한 라이브러리 임포트
@@ -413,11 +361,7 @@ def Create_npy(imagespath, imgsize, ext):
 
 A file named `calib_set.npy` containing the preprocessed data is created. This file can be used later in the training or inference stages.
 
-전처리된 데이터를 포함하는 `calib_set.npy`파일이 생성됩니다. 이 파일은 이후 학습 또는 추론 단계에서 사용할 수 있습니다.
-
 Enter the code to successfully preprocess the Train images and save them as a numpy array.
-
-Train 이미지들이 성공적으로 전처리되어 numpy 배열로 저장되는 코드를 입력합니다.
 
 ```jsx
 # "cannot identify image file" 에러가 발생하는 경우
@@ -427,10 +371,6 @@ Train 이미지들이 성공적으로 전처리되어 numpy 배열로 저장되�
 # Create_npy 함수 실행
 Create_npy('/content/drive/MyDrive/yolov5/Train/images', 512, 'jpg')
 ```
-
-학습 로그가 출력되며, 학습 과정 중 손실(loss), 정확도 등의 지표를 확인할 수 있습니다.
-
-아래의 코드를 실행시키기 전에 data.yaml파일을 경로에 넣어주도록 한다.
 
 The training logs will be displayed, allowing you to monitor metrics such as loss and accuracy during the training process.
 
@@ -455,8 +395,6 @@ After completing the training with the above code, the optimal weight file `best
 
 This file can be used for inference or further training.
 
-위 코드를 학습 완료 후 최적의 가중치 파일 `best.pt` 이 저장됩니다. 이 파일은 추론 또는 추가 학습에 사용됩니다. 
-
 ![image (7)](https://github.com/user-attachments/assets/a413769e-f581-49a9-92bf-494c36a35133)
 
 Running the code will initiate the training process as shown above.
@@ -464,12 +402,6 @@ Running the code will initiate the training process as shown above.
 After training is completed, you can check the trained results in the `/content/drive/MyDrive/yolov5/runs/train/exp/` directory.
 
 If you navigate to the directory, you will find the training results saved as shown below. [[training_results_link](https://drive.google.com/drive/folders/1nUQGAyimla3d-b2fwhx2lOcTE8bGwRs4?usp=sharing)]
-
-코드를 실행하면 위와 같이 학습을 진행할 것 이다.
-
-학습이 끝난 후 /content/drive/MyDrive/yolov5/runs/train/exp/경로에 학습된 걸 확인할 수 있다.
-
-경로로 들어가보면 아래와 같이 학습 결과가 저장되어 있다. [[training_results_link](https://drive.google.com/drive/folders/1nUQGAyimla3d-b2fwhx2lOcTE8bGwRs4?usp=sharing)]
 
 ![F1_curve](https://github.com/user-attachments/assets/debac977-ca70-4f16-9f62-3da1bb52f8d8)
 
@@ -517,8 +449,6 @@ If you navigate to the directory, you will find the training results saved as sh
 
 After execution, you can view interactive TensorBoard UI in Colab to monitor metrics such as loss, accuracy, and training curves.
 
-실행 후 Colab에서 인터랙티브한 TensorBoard UI를 통해 손실(Loss), 정확도, 학습 곡선 등을 확인할 수 있습니다.
-
 ```jsx
 # 객체 탐지 실행
 !python /content/drive/MyDrive/yolov5/detect.py \  # YOLOv5의 탐지 스크립트 실행
@@ -529,8 +459,6 @@ After execution, you can view interactive TensorBoard UI in Colab to monitor met
 ```
 
 Detect objects from images in the specified source path. The resulting images are saved in the `runs/detect/exp` folder by YOLOv5, with detected objects and bounding boxes displayed.
-
-지정된 소스 경로의 이미지에서 객체를 탐지합니다. 결과 이미지는 YOLOv5에서 기본적으로 **`runs/detect/exp`** 폴더에 탐지된 객체와 바운딩 박스가 표시된 형태로 저장됩니다.
 
 ```jsx
 # 모든 테스트 이미지에 대해 추론 결과를 표시
@@ -548,8 +476,6 @@ for imageName in glob.glob('/content/drive/MyDrive/yolov5/runs/detect/exp2/*.jpg
 ```
 
 Load the detection result image files and display them in the Colab or Jupyter Notebook environment for visual inspection.
-
-탐지 결과 이미지 파일을 불러와서 Colab 또는 Jupyter 노트북 환경에서 시각적으로 확인할 수 있도록 출력합니다.
 
 ![00000000](https://github.com/user-attachments/assets/95fddb6e-1dcb-4cd1-bc1e-8be83afaa6e3)
 
@@ -577,12 +503,6 @@ Since displaying detected objects in video format makes the results easier to in
 
 The following is an object detection video.
 
-비디오 파일(`fireex.mp4`)의 각 프레임에서 YOLOv5를 사용해 객체 탐지를 수행합니다.
-출력은 탐지된 객체와 바운딩 박스가 표시된 **비디오 파일**로 저장됩니다.
-
-탐지된 객체가 비디오 형태로 표시되면, 결과를 직관적으로 이해하기 쉽기 때문에 비디오로도 생성했습니다.
-
-다음은 객체 검출 영상입니다.
 
 https://github.com/user-attachments/assets/2590909d-96f8-4561-8ebc-49480c3e8fda
 
