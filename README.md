@@ -513,3 +513,14 @@ The following is an object detection video.
 
 [fire_extinguisher](https://drive.google.com/file/d/1I6X9XHSepEmPcWnV8GepaScHFwF8B_Uq/view?usp=sharing)
 
+This is a video run on Jetson Nano.
+
+https://github.com/user-attachments/assets/2c79c258-c81d-42bc-8f98-18334f1e305c
+
+https://github.com/user-attachments/assets/5ab7f418-d28f-4a10-b898-dc83d1b3b67a
+
+https://github.com/user-attachments/assets/aa47efdd-4de3-4101-a669-56198e388614
+
+
+
+
