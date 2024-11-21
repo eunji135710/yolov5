@@ -505,13 +505,13 @@ The following is an object detection video.
 
 
 
-[fire_extinguisher](https://drive.google.com/file/d/1VbC3X7ltAjyHlrBjZde7CQPUnOW5zrzU/view?usp=sharing)
+[fire_extinguisher1](https://drive.google.com/file/d/1VbC3X7ltAjyHlrBjZde7CQPUnOW5zrzU/view?usp=sharing)
 
-[fire_extinguisher](https://drive.google.com/file/d/1CwUU4oGnFAEVUgphv-0tSmXerRCFnEwj/view?usp=sharing)
+[fire_extinguisher2](https://drive.google.com/file/d/1CwUU4oGnFAEVUgphv-0tSmXerRCFnEwj/view?usp=sharing)
 
-[fire_extinguisher](https://drive.google.com/file/d/1inJ4fTo5wrxKBm8XoNx9FZzQ8ap6CCzL/view?usp=sharing)
+[fire_extinguisher3](https://drive.google.com/file/d/1inJ4fTo5wrxKBm8XoNx9FZzQ8ap6CCzL/view?usp=sharing)
 
-[fire_extinguisher](https://drive.google.com/file/d/1I6X9XHSepEmPcWnV8GepaScHFwF8B_Uq/view?usp=sharing)
+[fire_extinguisher4](https://drive.google.com/file/d/1I6X9XHSepEmPcWnV8GepaScHFwF8B_Uq/view?usp=sharing)
 
 This is a video run on Jetson Nano.
 
